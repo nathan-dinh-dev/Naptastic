@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/navbar/NavBar";
+import Providers from "./provider";
 
 export const metadata: Metadata = {
   title: "Naptastic",
@@ -17,7 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <main className="container py-10">{children}</main>
+        <Providers>
+          <Navbar />
+          <main className="container py-10">{children}</main>
+        </Providers>
       </body>
     </html>
   );
