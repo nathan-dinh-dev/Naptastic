@@ -2,13 +2,13 @@ import { categories } from "@/utils/categories";
 import { ScrollArea, ScrollBar } from "../ui/scroll-area";
 import Link from "next/link";
 
-function CategoriesList({
+const CategoriesList = ({
   category,
   search,
 }: {
   category?: string;
   search?: string;
-}) {
+}) => {
   const searchTerm = search ? `&search=${search}` : "";
   return (
     <section>
@@ -37,5 +37,5 @@ function CategoriesList({
       </ScrollArea>
     </section>
   );
-}
+};
 export default CategoriesList;

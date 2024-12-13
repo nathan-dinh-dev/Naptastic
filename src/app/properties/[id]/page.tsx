@@ -32,7 +32,7 @@ const DynamicBookingWrapper = dynamic(
   }
 );
 
-const PropertyDetailsPage = ({ params }: { params: { id: string } }) => {
+const PropertyDetailsPage = async ({ params }: { params: { id: string } }) => {
   const property = await fetchPropertyDetails(params.id);
   if (!property) redirect("/");
   const { baths, bedrooms, beds, guests } = property;

@@ -272,7 +272,7 @@ export const fetchFavorites = async () => {
   return favorites.map((favorite: any) => favorite.property);
 };
 
-export const fetchPropertyDetails = (id: string) => {
+export const fetchPropertyDetails = async (id: string) => {
   return db.property.findUnique({
     where: {
       id,

@@ -3,24 +3,24 @@ import CategoriesList from "@/components/home/CategoriesList";
 import PropertiesContainer from "@/components/home/PropertiesContainer";
 import { Suspense } from "react";
 
-function HomePage({
+const HomePage = async ({
   searchParams,
 }: {
   searchParams: { category?: string; search?: string };
-}) {
+}) => {
+  const params = await searchParams;
+
   return (
     <section>
-      <CategoriesList
-        category={searchParams.category}
-        search={searchParams.search}
-      />
+      <CategoriesList category={params.category} search={params.search} />
       <Suspense fallback={<LoadingCards />}>
         <PropertiesContainer
-          category={searchParams.category}
-          search={searchParams.search}
+          category={params.category}
+          search={params.search}
         />
       </Suspense>
     </section>
   );
-}
+};
+
 export default HomePage;
