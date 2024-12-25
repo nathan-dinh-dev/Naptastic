@@ -10,27 +10,13 @@ import { fetchPropertyDetails, findExistingReview } from "@/utils/actions";
 import { redirect } from "next/navigation";
 import Description from "@/components/properties/Description";
 import Amenities from "@/components/properties/Amenities";
-import dynamic from "next/dynamic";
-import { Skeleton } from "@/components/ui/skeleton";
 import SubmitReview from "@/components/reviews/SubmitReview";
 import PropertyReviews from "@/components/reviews/PropertyReviews";
 import { auth } from "@clerk/nextjs/server";
 
-const DynamicMap = dynamic(
-  () => import("@/components/properties/PropertyMap"),
-  {
-    ssr: false,
-    loading: () => <Skeleton className="h-[400px] w-full" />,
-  }
-);
-
-const DynamicBookingWrapper = dynamic(
-  () => import("@/components/booking/BookingWrapper"),
-  {
-    ssr: false,
-    loading: () => <Skeleton className="h-[200px] w-full" />,
-  }
-);
+// Import dynamic map as workaround error next 15.1.0
+import { DynamicMap } from "@/components/properties/DynamicMap";
+import { DynamicBookingWrapper } from "@/components/booking/DynamicBookingWrapper";
 
 const PropertyDetailsPage = async ({ params }: { params: { id: string } }) => {
   const property = await fetchPropertyDetails(params.id);

@@ -28,13 +28,16 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "date-fns": "^3.6.0",
+    "leaflet": "^1.9.4",
     "lucide-react": "^0.454.0",
-    "next": "^15.0.2",
+    "next": "15.1.0",
     "next-themes": "^0.4.3",
-    "react": "^19.0.0-rc-33c7bd9a-20241104",
+    "react": "19.0.0",
     "react-day-picker": "^8.10.1",
-    "react-dom": "^19.0.0-rc-33c7bd9a-20241104",
+    "react-dom": "19.0.0",
     "react-icons": "^5.3.0",
+    "react-leaflet": "^5.0.0",
+    "react-share": "^5.1.1",
     "tailwind-merge": "^2.5.4",
     "tailwindcss-animate": "^1.0.7",
     "world-countries": "^5.0.0",
@@ -42,18 +45,19 @@
     "zustand": "^5.0.1"
   },
   "devDependencies": {
+    "@types/leaflet": "^1.9.15",
     "@types/node": "^20",
-    "@types/react": "npm:types-react@19.0.0-rc.1",
-    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
+    "@types/react": "19.0.1",
+    "@types/react-dom": "19.0.2",
     "eslint": "^8",
-    "eslint-config-next": "^15.0.2",
+    "eslint-config-next": "15.1.0",
     "postcss": "^8",
     "prisma": "^6.0.1",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   },
   "overrides": {
-    "@types/react": "npm:types-react@19.0.0-rc.1",
-    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1"
+    "@types/react": "19.0.1",
+    "@types/react-dom": "19.0.2"
   }
 }

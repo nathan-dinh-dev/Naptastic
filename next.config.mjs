@@ -8,9 +8,14 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "virmjpqxaajeqwjohjll.supabase.co",
+        hostname: "jrcldxhgwmboxlebrhzj.supabase.co",
       },
     ],
+  },
+  experimental: {
+    serverActions: {
+      bodySizeLimit: "4mb", // resolve the error: Request body larger than maxBodyLength limit
+    },
   },
 };
 
