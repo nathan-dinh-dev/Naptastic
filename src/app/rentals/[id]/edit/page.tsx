@@ -17,7 +17,9 @@ import { type Amenity } from "@/utils/amenities";
 import ImageInputContainer from "@/components/form/ImageInputContainer";
 
 const EditRentalPage = async ({ params }: { params: { id: string } }) => {
-  const property = await fetchRentalDetails(params.id);
+  const currentParams = await params;
+
+  const property = await fetchRentalDetails(currentParams.id);
 
   if (!property) redirect("/");
 

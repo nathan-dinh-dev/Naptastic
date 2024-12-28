@@ -19,7 +19,8 @@ import { DynamicMap } from "@/components/properties/DynamicMap";
 import { DynamicBookingWrapper } from "@/components/booking/DynamicBookingWrapper";
 
 const PropertyDetailsPage = async ({ params }: { params: { id: string } }) => {
-  const property = await fetchPropertyDetails(params.id);
+  const currentParams = await params;
+  const property = await fetchPropertyDetails(currentParams.id);
   if (!property) redirect("/");
   const { baths, bedrooms, beds, guests } = property;
   const details = { baths, bedrooms, beds, guests };
