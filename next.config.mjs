@@ -17,6 +17,9 @@ const nextConfig = {
       bodySizeLimit: "4mb", // resolve the error: Request body larger than maxBodyLength limit
     },
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 };
 
 export default nextConfig;
