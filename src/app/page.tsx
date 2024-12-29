@@ -8,15 +8,16 @@ const HomePage = async ({
 }: {
   searchParams: { category?: string; search?: string };
 }) => {
-  const params = await searchParams;
-
   return (
     <section>
-      <CategoriesList category={params.category} search={params.search} />
+      <CategoriesList
+        category={searchParams.category}
+        search={searchParams.search}
+      />
       <Suspense fallback={<LoadingCards />}>
         <PropertiesContainer
-          category={params.category}
-          search={params.search}
+          category={searchParams.category}
+          search={searchParams.search}
         />
       </Suspense>
     </section>
